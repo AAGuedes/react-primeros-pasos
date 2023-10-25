@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const newMessage = {
     message: 'Hello World!',
     title: 'FirstApp',
@@ -8,15 +10,19 @@ const getResult = (a, b) => {
 }
 
 // Lo que está englobado por <></> puede hacerse también con Fragment
-export const FirstApp = ({ title }) => {
+export const FirstApp = ({ title, subtitle }) => {
 
     // console.log(props);
 
     return (
         <>
             <h1>{ title }</h1>
-            {/* <h1>{ JSON.stringify( newMessage )}</h1> */}
-            <p>Loren ipsun...</p>
+            <p>{ subtitle }</p>
         </>
     )
+}
+
+FirstApp.propTypes = {
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string
 }
