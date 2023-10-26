@@ -10,19 +10,26 @@ const getResult = (a, b) => {
 }
 
 // Lo que está englobado por <></> puede hacerse también con Fragment
-export const FirstApp = ({ title, subtitle }) => {
+export const FirstApp = ({ title, subtitle, name }) => {
 
     // console.log(props);
 
     return (
         <>
-            <h1>{ title }</h1>
-            <p>{ subtitle }</p>
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+            <p>{name}</p>
         </>
     )
 }
 
 FirstApp.propTypes = {
+    subtitle: PropTypes.string,
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string
+}
+
+FirstApp.defaultProps = {
+    name: 'John Doe',
+    subtitle: 'No subtitle',
+    title: 'No title',
 }
