@@ -7,17 +7,22 @@ export const CounterApp = ({ value }) => {
 
     const [counter, setCounter] = useState(value);
 
-    const handleAdd = () => {
-        setCounter(counter + 1);
-        // setCounter((c) => c + 1);
-    }
+    const counterAdd = () => setCounter(counter + 1);
+    const counterSubstract = () => setCounter(counter - 1);
+    const counterReset = () => setCounter(value);
 
     return (
         <>
             <h1>CounterApp</h1>
             <h2>{counter}</h2>
-            <button onClick={handleAdd}>
+            <button onClick={counterAdd}>
                 +1
+            </button>
+            <button onClick={counterSubstract}>
+                -1
+            </button>
+            <button onClick={counterReset}>
+                Reset
             </button>
         </>
     );
